@@ -1,12 +1,12 @@
 // Lista de videos de fans. Editá para sumar más.
 // type: 'youtube' (usa el ID después de v=) o 'instagram' (URL completa del Reel)
 window.RIOT_FAN_VIDEOS = [
-  { id:'v1', type:'youtube', src:'JR-Qwd-Sv-8', fan:'Lucía M.',  location:'Estadio River, Buenos Aires', band:"Guns N' Roses", product:'Remera Appetite for Destruction' },
-  { id:'v2', type:'youtube', src:'hPVBx763Wio', fan:'Javier R.', location:'Hipódromo de Palermo',         band:'Metallica',      product:'Hoodie Master of Puppets' },
-  { id:'v3', type:'youtube', src:'BxlZoyfHoN0', fan:'Mara P.',   location:'Vélez Sarsfield',              band:'Iron Maiden',    product:'Remera The Trooper' },
-  { id:'v4', type:'youtube', src:'9AtKwu07z_M', fan:'Diego F.',  location:'Estadio Único, La Plata',       band:'AC/DC',          product:'Campera de jean con parches' },
-  { id:'v5', type:'youtube', src:'hK7Ktn_Oy5Q', fan:'Sofía T.',  location:'Movistar Arena',                band:'Queen',          product:'Remera Bohemian Rhapsody' },
-  { id:'v6', type:'youtube', src:'6sVcEWCs9U0', fan:'Tomás A.',  location:'Niceto Club',                   band:'Nirvana',        product:'Hoodie Smiley' },
+  { id:'v1', type:'youtube', src:'JR-Qwd-Sv-8', fan:'Lucía M.',  location:'Estadio River, Buenos Aires', band:"Airbag", product:'Remera Appetite for Destruction' },
+  { id:'v2', type:'youtube', src:'hPVBx763Wio', fan:'Javier R.', location:'Hipódromo de Palermo',         band:'Europe',      product:'Hoodie Master of Puppets' },
+  { id:'v3', type:'youtube', src:'BxlZoyfHoN0', fan:'Mara P.',   location:'Vélez Sarsfield',              band:'Limp Bizkit',    product:'Remera The Trooper' },
+  { id:'v4', type:'youtube', src:'9AtKwu07z_M', fan:'Diego F.',  location:'Estadio Único, La Plata',       band:'Foo Fighters',          product:'Campera de jean con parches' },
+  { id:'v5', type:'youtube', src:'hK7Ktn_Oy5Q', fan:'Sofía T.',  location:'Movistar Arena',                band:'Green Day',          product:'Remera Bohemian Rhapsody' },
+  { id:'v6', type:'youtube', src:'6sVcEWCs9U0', fan:'Tomás A.',  location:'Estadio River, Buenos Aires',                   band:'AC/DC',        product:'Hoodie Smiley' },
 ];
 
 (function(){
