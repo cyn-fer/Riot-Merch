@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comunidad RIOT — Videos de fans en recitales | Riot Merch</title>
+<meta name="description" content="Videos de nuestros compradores luciendo merch oficial de Riot en recitales. Sumate a la tribu y mandanos tu video.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html"><img src="images/logo.png" alt="Riot Merch logo" class="nav-logo"></a>
+    <nav class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html">🏠 <span class="label">Inicio</span></a>
+      <a class="nav-link" data-page="productos.html" href="productos.html">💿 <span class="label">Productos</span></a>
+      <a class="nav-link" data-page="historia.html" href="historia.html">🎸 <span class="label">Historia</span></a>
+      <a class="nav-link" data-page="comunidad.html" href="comunidad.html">🤘 <span class="label">Comunidad</span></a>
+      <a class="nav-link" data-page="carrito.html" href="carrito.html" style="position:relative">🛒 <span class="label">Carrito</span>
+        <span id="cart-badge" class="cart-badge" style="display:none;position:absolute;top:-6px;right:-10px"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="fan-hero">
+  <div class="container">
+    <p class="eyebrow">LA TRIBU EN VIVO</p>
+    <h1 style="font-size:clamp(2.8rem,8vw,6rem);line-height:.9;margin:1rem 0">Videos de la <span style="color:var(--blood)">comunidad</span></h1>
+    <p style="max-width:640px;color:var(--muted);font-size:1.1rem">
+      Nuestros compradores luciendo el merch de RIOT en los recitales más bestiales.
+      Mandanos tu video y sumate al muro de la tribu.
+    </p>
+    <div class="btn-row" style="margin-top:2rem">
+      <a class="btn btn-blood" href="https://wa.me/5491100000000?text=Hola%20RIOT%2C%20quiero%20mandar%20un%20video%20de%20fan!" target="_blank" rel="noopener">ENVIAR MI VIDEO</a>
+      <a class="btn btn-ghost" href="https://instagram.com" target="_blank" rel="noopener">📸 ETIQUETANOS</a>
+    </div>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="block container">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">FROM THE PIT</p>
+      <h2 style="font-size:clamp(2rem,5vw,4rem)">Caos en cámara</h2>
+    </div>
+    <span class="stencil" style="color:var(--muted)" id="fan-count"></span>
+  </div>
+  <div class="fan-grid" id="fan-videos-all"></div>
+</section>
+
+<!-- CTA -->
+<section class="block container">
+  <div class="cta">
+    <h2>¿Fuiste al recital?</h2>
+    <p>Mandanos tu video por WhatsApp o etiquetanos en Instagram con #RIOTMERCH y aparecé en esta página.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:1.5rem">
+      <a class="btn btn-ghost" href="mailto:hola@riotmerch.com?subject=Video%20de%20fan">✉ hola@riotmerch.com</a>
+      <a class="btn btn-blood" href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="container foot-grid">
+    <div>
+      <img src="images/logo.png" alt="Riot Merch" style="height:64px;margin-bottom:1rem">
+      <p style="color:var(--muted);font-size:.9rem">Indumentaria oficial y merch de las bandas más legendarias del rock mundial.</p>
+    </div>
+  </div>
+  <p class="copy">© <span class="year"></span> RIOT MERCH — Todos los derechos reservados.</p>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script src="js/main.js"></script>
+<script src="js/comunidad.js"></script>
+<script>
+  renderFanVideos('#fan-videos-all');
+  document.getElementById('fan-count').textContent = (window.RIOT_FAN_VIDEOS||[]).length + ' VIDEOS · ACTUALIZADO SEMANALMENTE';
+</script>
+</body>
+</html>

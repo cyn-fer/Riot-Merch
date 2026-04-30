@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RIOT MERCH — Indumentaria oficial de bandas de rock</title>
+<meta name="description" content="Tienda online de merch oficial: remeras, hoodies, vinilos, gorras y posters de las bandas más legendarias del rock. Envíos a todo el país.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html"><img src="images/logo.png" alt="Riot Merch logo" class="nav-logo"></a>
+    <nav class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html">🏠 <span class="label">Inicio</span></a>
+      <a class="nav-link" data-page="productos.html" href="productos.html">💿 <span class="label">Productos</span></a>
+      <a class="nav-link" data-page="historia.html" href="historia.html">🎸 <span class="label">Historia</span></a>
+      <a class="nav-link" data-page="comunidad.html" href="comunidad.html">🤘 <span class="label">Comunidad</span></a>
+      <a class="nav-link" data-page="carrito.html" href="carrito.html" style="position:relative">🛒 <span class="label">Carrito</span>
+        <span id="cart-badge" class="cart-badge" style="display:none;position:absolute;top:-6px;right:-10px"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="images/hero-concert.jpg" alt="Multitud en concierto de rock con luces rojas">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <span class="stamp">DROP 24 / 25</span>
+    <h1>Vestí el<br><span class="red">RUIDO</span><br>que te define</h1>
+    <p>Indumentaria oficial de las bandas que escribieron la historia del rock. Algodón premium, prints que duran toda una gira.</p>
+    <div class="btn-row">
+      <a class="btn btn-blood" href="productos.html">Ver Productos</a>
+      <a class="btn btn-ghost" href="#novedades">Novedades</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-track">
+  <span>ENVÍO GRATIS +$30.000</span><span>★</span><span>DROP 24 DISPONIBLE</span><span>★</span><span>3 CUOTAS SIN INTERÉS</span><span>★</span><span>STOCK LIMITADO</span><span>★</span>
+  <span>ENVÍO GRATIS +$30.000</span><span>★</span><span>DROP 24 DISPONIBLE</span><span>★</span><span>3 CUOTAS SIN INTERÉS</span><span>★</span><span>STOCK LIMITADO</span><span>★</span>
+  <span>ENVÍO GRATIS +$30.000</span><span>★</span><span>DROP 24 DISPONIBLE</span><span>★</span><span>3 CUOTAS SIN INTERÉS</span><span>★</span><span>STOCK LIMITADO</span><span>★</span>
+</div></div>
+
+<!-- TRUST -->
+<section class="container"><div class="trust">
+  <div><div class="trust-icon">🚚</div><p class="stencil">Envío a todo el país</p><small>24-72hs</small></div>
+  <div><div class="trust-icon">🛡️</div><p class="stencil">Compra protegida</p><small>Mercado Pago</small></div>
+  <div><div class="trust-icon">🔥</div><p class="stencil">Drops semanales</p><small>Stock limitado</small></div>
+  <div><div class="trust-icon">💿</div><p class="stencil">Licencias oficiales</p><small>100% original</small></div>
+</div></section>
+
+<!-- NOVEDADES -->
+<section class="block container" id="novedades">
+  <div class="section-head">
+    <div><p class="eyebrow">FRESCO DEL BACKSTAGE</p><h2>Novedades</h2></div>
+    <a href="productos.html" class="stencil">VER TODO →</a>
+  </div>
+  <div class="grid" id="novedades-grid"></div>
+</section>
+
+<!-- SPOTIFY -->
+<section class="block container">
+  <div class="section-head">
+    <h2 style="color:var(--blood)">Sound the Riot</h2>
+    <span class="stencil" style="color:var(--muted)">// PLAYLIST OFICIAL</span>
+  </div>
+  <p style="color:var(--muted);max-width:600px;margin-bottom:2rem">Subí el volumen mientras navegás. Esta es la playlist que suena en nuestro local.</p>
+  <div class="spotify-wrap">
+    <iframe title="Spotify Rock Classics" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXRqgorJj26U?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- FAN VIDEOS PREVIEW -->
+<section class="block container">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">LA TRIBU EN VIVO</p>
+      <h2 style="font-size:clamp(2.5rem,7vw,5rem)">Fans en recitales</h2>
+    </div>
+    <a class="stencil" href="comunidad.html" style="color:var(--blood);text-decoration:none">VER TODOS →</a>
+  </div>
+  <div class="fan-grid" id="fan-videos-preview"></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block container">
+  <div style="text-align:center;margin-bottom:3rem">
+    <p class="eyebrow">VOCES DE LA TRIBU</p>
+    <h2 style="font-size:clamp(2.5rem,7vw,5rem)">Lo que dicen los fans</h2>
+  </div>
+  <div class="reviews">
+    <blockquote class="review"><div class="stars">★★★★★</div><p>"La calidad de la remera es brutal, igual a la de un recital. Llegó en 3 días."</p><footer><span class="name">Lucía M.</span> · Buenos Aires</footer></blockquote>
+    <blockquote class="review"><div class="stars">★★★★★</div><p>"El hoodie de AC/DC es exactamente lo que buscaba. Atención 10/10."</p><footer><span class="name">Javier R.</span> · Córdoba</footer></blockquote>
+    <blockquote class="review"><div class="stars">★★★★★</div><p>"Vinilo impecable, edición limitada. Lo recomiendo cerrado."</p><footer><span class="name">Mara P.</span> · Rosario</footer></blockquote>
+    <blockquote class="review"><div class="stars">★★★★☆</div><p>"La campera de jean con parches es una bomba, llueven cumplidos."</p><footer><span class="name">Diego F.</span> · Mendoza</footer></blockquote>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block container">
+  <div class="cta">
+    <h2>Sumate al RIOT</h2>
+    <p>Suscribite y enterate primero de los drops, descuentos exclusivos y entradas a sorteos.</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); toast('¡Estás dentro de la tribu!')">
+      <input type="email" required placeholder="tu@email.com">
+      <button type="submit">ENROLARME</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="container foot-grid">
+    <div>
+      <img src="images/logo.png" alt="Riot Merch" style="height:64px;margin-bottom:1rem">
+      <p style="color:var(--muted);font-size:.9rem">Indumentaria oficial y merch de las bandas más legendarias del rock mundial. Envíos a todo el país.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul class="foot-links">
+        <li><a href="productos.html?cat=Remeras">Remeras</a></li>
+        <li><a href="productos.html?cat=Hoodies">Hoodies</a></li>
+        <li><a href="productos.html?cat=Vinilos">Vinilos</a></li>
+        <li><a href="productos.html?cat=Accesorios">Accesorios</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul class="foot-links">
+        <li><a href="ayuda.html#envios">Envíos & devoluciones</a></li>
+        <li><a href="ayuda.html#talles">Guía de talles</a></li>
+        <li><a href="ayuda.html#terminos">Términos</a></li>
+        <li><a href="ayuda.html#privacidad">Privacidad</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Seguinos</h4>
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="copy">© <span class="year"></span> RIOT MERCH — Todos los derechos reservados. Hecho con distorsión y feedback.</p>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/5491100000000?text=Hola%20RIOT%20MERCH%2C%20quiero%20info!" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>document.querySelectorAll(".year").forEach(e => e.textContent = new Date().getFullYear());</script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+<script src="js/comunidad.js"></script>
+<script>renderFanVideos("#fan-videos-preview", 3);</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historia del Rock — RIOT MERCH</title>
+<meta name="description" content="5.483 canciones que marcaron 70 años de rock con sus características de audio de Spotify. Datos en vivo.">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .hist-table{width:100%;border-collapse:collapse;font-size:.9rem}
+  .hist-table th,.hist-table td{padding:.75rem;border-bottom:1px solid var(--border);text-align:left}
+  .hist-table th{font-family:'Bebas Neue', sans-serif;letter-spacing:.15em;font-size:.7rem;color:var(--muted);text-transform:uppercase;background:var(--bg-2)}
+  .hist-table tr:hover{background:var(--bg-2)}
+  .hist-table td.num,.hist-table th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .hist-table .artist{color:var(--blood)}
+  .bar-row{display:flex;align-items:center;gap:.5rem;font-size:.7rem;margin-top:.4rem}
+  .bar-row .lbl{width:60px;color:var(--muted);font-family:'Bebas Neue', sans-serif;letter-spacing:.15em;text-transform:uppercase}
+  .bar-row .bar{flex:1;height:6px;background:#222;overflow:hidden}
+  .bar-row .bar > i{display:block;height:100%;background:var(--blood)}
+  .bar-row .pct{width:38px;text-align:right;font-variant-numeric:tabular-nums}
+  .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem}
+  .feat-card{background:var(--bg-2);border:1px solid var(--border);padding:1.25rem;transition:border-color .2s}
+  .feat-card:hover{border-color:var(--blood)}
+  .pager{display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:1.5rem}
+  .pager button{font-family:'Bebas Neue', sans-serif;letter-spacing:.15em;padding:.6rem 1rem;border:1px solid var(--border);background:transparent;color:inherit;cursor:pointer}
+  .pager button:hover:not(:disabled){border-color:var(--blood)}
+  .pager button:disabled{opacity:.3;cursor:not-allowed}
+  .stats-row{display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:1rem;font-family:'Bebas Neue', sans-serif;letter-spacing:.15em;font-size:.75rem;color:var(--muted);text-transform:uppercase}
+  .table-wrap{border:1px solid var(--border);overflow-x:auto}
+  .loader{display:flex;justify-content:center;align-items:center;gap:.5rem;padding:4rem;color:var(--muted)}
+  .spin{display:inline-block;width:18px;height:18px;border:2px solid var(--muted);border-top-color:var(--blood);border-radius:50%;animation:sp 1s linear infinite}
+  .hp-spin{display:inline-block;width:10px;height:10px;border:2px solid var(--muted);border-top-color:var(--blood);border-radius:50%;animation:sp 1s linear infinite;vertical-align:middle}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html"><img src="images/logo.png" alt="Riot Merch logo" class="nav-logo"></a>
+    <nav class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html">🏠 <span class="label">Inicio</span></a>
+      <a class="nav-link" data-page="productos.html" href="productos.html">💿 <span class="label">Productos</span></a>
+      <a class="nav-link" data-page="historia.html" href="historia.html">🎸 <span class="label">Historia</span></a>
+      <a class="nav-link" data-page="comunidad.html" href="comunidad.html">🤘 <span class="label">Comunidad</span></a>
+      <a class="nav-link" data-page="carrito.html" href="carrito.html" style="position:relative">🛒 <span class="label">Carrito</span>
+        <span id="cart-badge" class="cart-badge" style="display:none;position:absolute;top:-6px;right:-10px"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="block container">
+  <header style="margin-bottom:2.5rem">
+    <p class="eyebrow">ARCHIVO SONORO</p>
+    <h1 style="font-size:clamp(2.5rem,7vw,5rem)">Historia del Rock</h1>
+    <p style="color:var(--muted);max-width:640px;margin-top:.5rem">5.483 canciones que marcaron 70 años de rock, con sus características de audio de Spotify. Datos integrados desde Google Sheets.</p>
+  </header>
+
+  <div id="hist-status" class="loader"><span class="spin"></span> Cargando archivo...</div>
+
+  <div id="hist-content" style="display:none">
+    <div class="filters">
+      <input id="hist-search" type="search" placeholder="Buscar canción o artista...">
+      <div id="hist-decades" style="display:flex;flex-wrap:wrap;gap:.5rem"></div>
+    </div>
+
+    <h2 class="eyebrow" style="margin:1.5rem 0 .75rem">TOP 3 EN ESTE FILTRO</h2>
+    <div id="hist-featured" class="feat-grid"></div>
+
+    <div id="hist-stats" class="stats-row"></div>
+
+    <div class="table-wrap">
+      <table class="hist-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Canción</th><th>Artista</th>
+            <th class="num">Año</th><th class="num">Pop.</th><th class="num">Tempo</th>
+          </tr>
+        </thead>
+        <tbody id="hist-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <button id="hist-prev">◄ ANT</button>
+      <span id="hist-pageinfo" style="font-family:'Bebas Neue', sans-serif;letter-spacing:.15em;padding:0 1rem"></span>
+      <button id="hist-next">SIG ►</button>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot-grid">
+    <div>
+      <img src="images/logo.png" alt="Riot Merch" style="height:64px;margin-bottom:1rem">
+      <p style="color:var(--muted);font-size:.9rem">Indumentaria oficial y merch de las bandas más legendarias del rock mundial. Envíos a todo el país.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul class="foot-links">
+        <li><a href="productos.html?cat=Remeras">Remeras</a></li>
+        <li><a href="productos.html?cat=Hoodies">Hoodies</a></li>
+        <li><a href="productos.html?cat=Vinilos">Vinilos</a></li>
+        <li><a href="productos.html?cat=Accesorios">Accesorios</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul class="foot-links">
+        <li><a href="ayuda.html#envios">Envíos & devoluciones</a></li>
+        <li><a href="ayuda.html#talles">Guía de talles</a></li>
+        <li><a href="ayuda.html#terminos">Términos</a></li>
+        <li><a href="ayuda.html#privacidad">Privacidad</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Seguinos</h4>
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <p class="copy">© <span class="year"></span> RIOT MERCH — Todos los derechos reservados. Hecho con distorsión y feedback.</p>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>document.querySelectorAll(".year").forEach(e => e.textContent = new Date().getFullYear());</script>
+<script src="js/main.js"></script>
+<script src="js/rock-data.js"></script>
+<script src="js/historia.js"></script>
+</body>
+</html>
